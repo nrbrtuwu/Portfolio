@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0a0a0a] text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply leading-[1.2] py-[0.15em];
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass-card {
+  @apply bg-[#111111] rounded-2xl p-6 transition-all duration-300 border border-white/10 hover:border-white/20;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent font-bold relative z-50;
+  background-image: linear-gradient(
+    135deg,
+    rgb(96, 165, 250) 0%,      /* blue-400 */
+    rgb(167, 139, 250) 20%,    /* violet-400 */
+    rgb(244, 114, 182) 40%,    /* pink-400 */
+    rgb(129, 140, 248) 60%,    /* indigo-400 */
+    rgb(147, 197, 253) 80%,    /* blue-300 */
+    rgb(96, 165, 250) 100%     /* blue-400 */
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease-in-out infinite;
+}
+
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-white/5;
+}
